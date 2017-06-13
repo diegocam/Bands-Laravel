@@ -50,7 +50,7 @@
         <div class="form-group">
             <label for="inputTracks" class="col-md-2 control-label">Number of Tracks:</label>
             <div class="col-md-3">
-                <input type="text" class="form-control" id="inputTracks" placeholder="Number of Tracks" name="numberoftracks" value="{{ old('numberoftracks') ?: ((isset($album) && $album->numberoftracks) ? $album->numberoftracks : "") }}">
+                <input type="number" class="form-control" id="inputTracks" placeholder="Number of Tracks" name="numberoftracks" value="{{ old('numberoftracks') ?: ((isset($album) && $album->numberoftracks) ? $album->numberoftracks : "") }}">
             </div>
         </div>
         <div class="form-group">

@@ -76,13 +76,11 @@ class albumsController extends Controller
             'band_id' => 'required|exists:bands,id'
         ]);
 
-        $band->start_date = (new Carbon($request->start_date))->format('Y-m-d');
-
         $album = new Album();
         $album->band_id = $request->band_id;
         $album->name = $request->name;
-        $album->recorded_date = $request->recorded_date;
-        $album->release_date = $request->release_date;
+        $album->recorded_date = (new Carbon($request->recorded_date))->format('Y-m-d');
+        $album->release_date = (new Carbon($request->release_date))->format('Y-m-d');
         $album->numberoftracks = $request->numberoftracks;
         $album->label = $request->label;
         $album->producer = $request->producer;
