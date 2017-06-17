@@ -20,6 +20,7 @@ class CreateBandsTable extends Migration
             $table->string('website')->nullable();
             $table->boolean('still_active')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

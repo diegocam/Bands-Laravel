@@ -24,6 +24,7 @@ class CreateAlbumsTable extends Migration
             $table->string('producer')->nullable();
             $table->string('genre')->nullable();
             $table->timestamps();
+            $table->softDeletes();
             $table->foreign('band_id')
                 ->references('id')->on('bands')
                 ->onDelete('cascade');
