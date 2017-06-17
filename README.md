@@ -22,6 +22,7 @@ These instructions will get you a copy of the project up and running on your loc
 - [PHP >= 5.6.4](http://php.net/)
 - [Composer](https://getcomposer.org/)
 - [MySQL](https://dev.mysql.com/doc/refman/5.7/en/windows-installation.html)
+- [Git](https://git-scm.com/)
 
 ### Install
 
