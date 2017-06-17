@@ -1,6 +1,18 @@
 # Bands and Albums
 
-This application keeps track of favorite bands and albums.
+This application keeps track of your favorite bands and albums.
+
+With this application, you will be able to do the following:
+ - Store different bands and their albums into a database 
+ - Visually manage the contents of your database
+ - Edit each band's and/or album's information
+ - Delete a band with its corresponding albums
+ - Delete single albums separately
+ - See a list of albums per band
+ 
+Each list (bands/albums), is fetched via AJAX calls using the DataTables library alongside with Bootstrap. 
+This offers a great advantage as it provides you with pagination, searching, sorting, etc.. Using Bootstrap also helps keeping 
+a visually pleasant/modern application.
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
@@ -67,6 +79,7 @@ These instructions will get you a copy of the project up and running on your loc
 - [jQuery DataTables](https://datatables.net/)
 - [Laravel DataTables](https://datatables.yajrabox.com/)
 - [jQuery](https://jquery.com/)
+- [Bootstrap](http://getbootstrap.com/)
 - [Composer](https://getcomposer.org/)
 - [MySQL](https://dev.mysql.com/doc/refman/5.7/en/windows-installation.html)
 
