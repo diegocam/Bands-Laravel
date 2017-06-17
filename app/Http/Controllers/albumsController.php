@@ -141,7 +141,8 @@ class albumsController extends Controller
 
     /**
      * This method will be called via AJAX using the DataTables library. Its purpose is to return an array
-     * of the Albums(with their corresponding band) in the system in JSON format, specifically for DataTables.
+     * of the Albums(with their corresponding band) in the system in JSON format, specifically for DataTables,
+     * making sure all columns are properly formatted for the view.
      *
      * @return mixed
      */
@@ -149,6 +150,12 @@ class albumsController extends Controller
     {
         $albums = Album::with('band')->select('albums.*');
         return Datatables::of($albums)
+            ->editColumn('recorded_date', function ($album) {
+                return $album->recorded_date ? with(new Carbon($album->recorded_date))->format('m-d-Y') : '';
+            })
+            ->editColumn('release_date', function ($album) {
+                return $album->release_date ? with(new Carbon($album->release_date))->format('m-d-Y') : '';
+            })
             ->addColumn('action', function ($album) {
                 return "<a href='" . route('albums.edit', ['id' => $album->id]) . "' class='editor_edit'>Edit</a> | <a href=':javascript' data-id='$album->id' class='deleteRow'>Delete</a>";
             })
